@@ -1,0 +1,161 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/21286/hlt/asr/asr_template/utility_scripts
+END
+find_repeated_phones.pl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/18341/hlt/asr/asr_template/utility_scripts/find_repeated_phones.pl
+END
+cat_all_trans.pl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/20898/hlt/asr/asr_template/utility_scripts/cat_all_trans.pl
+END
+create_n_folds.pl
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/20699/hlt/asr/asr_template/utility_scripts/create_n_folds.pl
+END
+HMath.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/21286/hlt/asr/asr_template/utility_scripts/HMath.c
+END
+select_matching_mlfs.sh
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/20977/hlt/asr/asr_template/utility_scripts/select_matching_mlfs.sh
+END
+create_preproc_lists.pl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/17928/hlt/asr/asr_template/utility_scripts/create_preproc_lists.pl
+END
+generate_complete_lists.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/18595/hlt/asr/asr_template/utility_scripts/generate_complete_lists.py
+END
+HMath.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/21286/hlt/asr/asr_template/utility_scripts/HMath.h
+END
+generate_lwazi_subset_lists.py
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/18595/hlt/asr/asr_template/utility_scripts/generate_lwazi_subset_lists.py
+END
+HResults.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/21286/hlt/asr/asr_template/utility_scripts/HResults.c
+END
+generate_train_test_lists.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/20945/hlt/asr/asr_template/utility_scripts/generate_train_test_lists.py
+END
+create_hcopy_lists.pl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/17928/hlt/asr/asr_template/utility_scripts/create_hcopy_lists.pl
+END
+create_dict_from_list.pl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/20899/hlt/asr/asr_template/utility_scripts/create_dict_from_list.pl
+END
+display_top_prons.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/18728/hlt/asr/asr_template/utility_scripts/display_top_prons.py
+END
+calc_results_per_category.sh
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/18572/hlt/asr/asr_template/utility_scripts/calc_results_per_category.sh
+END
+score_terms.pl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/20969/hlt/asr/asr_template/utility_scripts/score_terms.pl
+END
+select_sub_mlf.pl
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/21228/hlt/asr/asr_template/utility_scripts/select_sub_mlf.pl
+END
+id_noise.pl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/18572/hlt/asr/asr_template/utility_scripts/id_noise.pl
+END
+hvite_parallel.sh
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/21056/hlt/asr/asr_template/utility_scripts/hvite_parallel.sh
+END
+HMem.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/21286/hlt/asr/asr_template/utility_scripts/HMem.c
+END
+check_num_files_used_per_step.pl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/20699/hlt/asr/asr_template/utility_scripts/check_num_files_used_per_step.pl
+END
+select_eval_set.pl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/20902/hlt/asr/asr_template/utility_scripts/select_eval_set.pl
+END
+select_tst_terms_from_list.pl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/20901/hlt/asr/asr_template/utility_scripts/select_tst_terms_from_list.pl
+END
+generate_nchlt_subset_lists.py
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/18671/hlt/asr/asr_template/utility_scripts/generate_nchlt_subset_lists.py
+END
+HMem.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/21286/hlt/asr/asr_template/utility_scripts/HMem.h
+END
+select_test_prompts.pl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/20903/hlt/asr/asr_template/utility_scripts/select_test_prompts.pl
+END

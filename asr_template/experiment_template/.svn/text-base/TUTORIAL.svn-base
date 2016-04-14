@@ -1,0 +1,144 @@
+ASR TUTORIAL
+
+This short tutorial is not intended to be a comprehensive ASR tutorial. Instead,
+it will only guide you through the (now quite easy) process of building an ASR
+system using the Timit corpus
+
+================================================================================
+Step 1 - obtaining all relevant sources
+================================================================================
+
+(a) Check out asr_template
+- svn co http://echelon.dhcp/svn/hlt/asr/asr_template asr_template
+
+(b) Check out Timit corpus transcriptions and audio
+- svn co http://echelon.dhcp/svn/hlt/asr/corpora/Timit_16k timit
+- copy the audio from /home/asrdata/corpora/timit_16k/audio on echelon
+
+(c) Check out CMU dict
+- svn co http://echelon.dhcp/svn/hlt/asr/dicts dicts
+
+(d) Install HTK
+- see http://htk.eng.cam.ac.uk/
+
+(e) Edit Vars.sh and set ALL variables under REQUIRED
+
+================================================================================
+Step 2 - Extracting features (this is typically done once per corpus)
+================================================================================
+
+(a) Create a list which has the following format:
+(full path to any file).wav (full path to where mfc can be stored).mfc
+- I recommend creating a data directory where you can store these mfccs on a semi-
+  permanent basis, eg "/home/cvheerden/data/mfccs/timit"
+- there is a utility script which can help you with this:
+  asr_template/utility_scripts/create_hcopy_lists.sh
+  simply do:
+     perl create_hcopy_lists.pl <in:wavs dir> <out:mfcc dir> <out:hcopylist.txt>
+     - recursively finds .wav files in wavs_dir
+     wavs dir             - timit audio directory
+     mfcc dir             - directory where mfccs will be saved
+     preproclist.txt      - hcopy list that will be created for you, to be used in (2b)
+
+(b) in asr_template/experiment_template:
+    - edit Vars.sh and make sure SOURCEFORMAT="WAVE" and TARGETKIND="MFCC_0_D_A_Z"
+    - do ./FEATURE_EXTRACTION.sh hcopylist.txt
+
+================================================================================
+Step 3 - Normalizing transcriptions (this is typically done once per corpus)
+================================================================================
+
+(a) Create a list similar to the one generated in step 2
+- I recommend creating a data directory where you can store these process txts on
+  a semi-permanent basis, eg "/home/cvheerden/data/processed_transcriptions/timit"
+- there is a utility script which can help you with this:
+  asr_template/utility_scripts/create_preproc_lists.sh
+  simply do:
+     perl create_preproc_lists.pl <in:trans dir> <out:processed trans dir> <out:preproclist.txt>
+     - recursively finds .txt files in trans dir
+     trans dir            - timit transcription directory
+     processed trans dir  - directory where processed transcriptions will be saved
+     preproclist.txt      - list that will be created for you, to be used in (3d)
+
+(b) Create a punctuation list which has the following format:
+"punct to remove";"replace with"
+- a typical example to remove commas (,) would be
+",";""
+- there is already an example in the timit info folder. See corpora/Timit_16k/info/punctuation.txt
+
+(c) Set FILE_PUNCT in Vars.sh (asr_template/experiment_template/Vars.sh) to point to punctuation.txt
+
+(d) do "bash PREPROC.sh preproclist.lst all_phases"
+
+
+================================================================================
+Step 4 - Create train and test lists
+================================================================================
+
+(a) Create a text file with a full path to the extracted feature files you want to use
+    for training. To do this, you can for example do (notice the FULL path to audio dir):
+    find /home/cvheerden/data/mfccs/timit -iname "*.mfc" | grep "trn" > audio_trn.lst
+
+(b) Do the same for test feature files, as well as trn + tst transcriptions:
+    find /home/cvheerden/data/mfccs/timit -iname "*.mfc" | grep "tst" > audio_tst.lst
+    find /home/cvheerden/data/processed_transcriptions/timit -iname "*.txt" | grep "trn" > trans_trn.lst
+    find /home/cvheerden/data/processed_transcriptions/timit -iname "*.txt" | grep "tst" > trans_tst.lst
+
+================================================================================
+Step 5 - Setup and test
+================================================================================
+
+* Steps (1) - (4) typically only need to be done once per corpus. After that you
+  can perform experiments as many times as you like using the same lists and
+  processed transcriptions + feature files
+
+(a) In asr_template/src, do "sudo make" (or, if you don't want to install system
+    wide:
+    Edit the Makefile to specify binary installation directory and run "make")
+
+(b) Set ALL variables under REQUIRED in asr_template/experiment_template/Vars.sh
+
+(c) do ./CHECK.sh all_phases (in asr_template/experiment_template)
+
+================================================================================
+Step 6 - Train a cross_word triphone system
+================================================================================
+
+(a) If CHECK didn't give errors, do ./TRAIN.sh all_phases
+
+(b) If you want to train a system with eg SEMITIED transforms, you can either add
+    an "all_phases" flag to the if statement in TRAIN.sh, or simply do
+    ./TRAIN.sh semitied once (a) is finished training
+
+================================================================================
+Step 7 - Evaluate cross_word triphone system
+================================================================================
+
+(a) Once training is done, you should have 33 hmm models (DIR_EXP/models/hmm_33)
+
+(b) in asr_template/experiment_template/, do ./TEST phone_rec
+
+(c) Once testing is done, do ./TEST phone_results
+
+====================== HTK Results Analysis =======================
+  Date: 
+  Ref : /your_exp_path/mlfs/monophones_tst.mlf
+  Rec : /your_exp_path/results/test_results.mlf
+------------------------ Overall Results --------------------------
+SENT: %Correct=0.06 [H=1, S=1679, N=1680]
+WORD: %Corr=74.08, Acc=57.17 [H=40696, D=2290, S=11949, I=9289, N=54935]
+
+(d) If you also do ./TRAIN.sh semitied, you should have 36 hmm models (DIR_EXP/models/hmm_36)
+
+(e) in asr_template/experiment_template/, do ./TEST phone_rec (NB! change the name of the test_results.mlf file if you do not want previous results to be overwritten.)
+
+(f) Once testing is done, do ./TEST phone_results
+
+====================== HTK Results Analysis =======================
+  Date: 
+  Ref : /your_exp_path/mlfs/monophones_tst.mlf
+  Rec : /your_exp_path/results/test_results.mlf
+------------------------ Overall Results --------------------------
+SENT: %Correct=0.24 [H=4, S=1676, N=1680]
+WORD: %Corr=75.88, Acc=62.40 [H=41685, D=2378, S=10872, I=7405, N=54935]
+

@@ -1,0 +1,24 @@
+Please follow the instructions below and let me know if you're still struggling with anything?
+
+(1) train normal ASR model. ie,
+* create experiment /home/thipe/experiments/sepedi/triphone_model
+* in /home/thipe/experiments/sepedi/triphone_model/src, do bash TRAIN.sh all_phases (and make sure that semitied will also be run when issuing the flag all_phases)
+
+(2) train garbage ASR model, ie, (VERY important - this is an independent experiment. Don't run this script in the same directory as the one where you trained the model in (1), it will not work. This is what you did. For this experiment, use exactly the same lists and dictionary as in (1))
+* create experiment /home/thipe/experiments/sepedi/garbage_model
+* in /home/thipe/experiments/sepedi/garbage_model/src, do
+bash TRAIN_BACKGROUND_MODEL.sh all_phases
+
+(3) Once (1) and (2) done, inside /home/thipe/experiments/sepedi/garbage_model/src do
+bash TRAIN_BACKGROUND_MODEL.sh merge (with pointers to the needed models)
+
+Once (3) is done, the models in (1) will be modified to contain the garbage model. You can now align with them. When using bash TRAIN.sh align_train or align_test, you'll see that the process breaks. Just point it to where SEMITIED is after -J.
+
+The garbage model is a four state model, which contains the old "sp" as the first state and then three 14 mixture general states. These "general" states are the ones trained in the "garbage model experiment". Instead of giving the correct transcriptions, each audio file simply has "bghmm" as it's transcription, with the pronunciation of "bghmm" being "bghmm". That means all the speech in the entire corpus is modeled by one 3-state model. After this model is trained, we merge it with the sp model to create the 4-state garbage model.
+
+Why do we call the model "sp" (the old sp has been renamed to "sp_renamed"
+* HTK only allows one tee model (hardcoded as SP). A tee model is one that can be skipped without any associated cost
+
+Why 4-states?
+Two reasons
+(1) We want to be able to use the old sp model as we did previously to align with short pauses after words. We also want to be able to align speech (such as repititions, uhms, ahs etc) that wasn't transcribed against the general garbage model. However, we want to be able to skip both the sp and the garbage model completely if the transcription is 100% correct. Since HTK only allows one tee model, we merge them together and add transitions which allows either or both models to be used after every word.

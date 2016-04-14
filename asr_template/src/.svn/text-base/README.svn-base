@@ -1,0 +1,3 @@
+This folder contains code that is used by the ASR training scripts to train hmms
+
+If you want to train an ASR system, see "../experiment_templates"

@@ -1,0 +1,45 @@
+tgz/tbz
+
+http://juicer.amiproject.org/juicer/sources/juicer-0.12.1.tar.bz2
+http://juicer.amiproject.org/tracter/sources/tracter-0.6.0.tar.bz2
+http://www.torch.ch/archives/Torch3src.tgz
+http://sourceforge.net/projects/kissfft/files/kissfft/v1_2_9/kiss_fft129.tar.gz/download
+
+TORCH: xmake
+- cp xmake to folder in path
+- cp config/Linux.cfg to Torch3 parent folder
+- edit following line in Linux.cfg
+# Packages you want to use
+packages = distributions gradients kernels speech datasets decoder
+
+
+Tracter:
+- install zsh & cmake
+- in build/ cp Configure.sh.example Configure.sh
+- extract kissfft
+- SET
+    export KISSFFT_DIR=/home/ntkleynhans/Workspace/juicer/kiss_fft129
+    software=/home/ntkleynhans/Workspace/juicer/
+    export HTK_DIR=$software/htk
+    export TORCH3_DIR=/home/ntkleynhans/Workspace/juicer/Torch3
+
+    -D CMAKE_CXX_FLAGS_DEBUG="-g -Wall -Werror -lpthread" \
+- ./Configure.sh & make & make install
+
+
+Juicer:
+- install bison, flex
+- in build/ cp Configure.sh.example Configure.sh
+- SET
+    export HTK_DIR=$software/htk
+    export TORCH3_DIR=$software/Torch3
+
+- in .bashrc set
+    export LD_LIBRARY_PATH=LD_LIBRARY_PATH:$HOME/local/lib/
+    export PATH=$PATH:$HOME/local/bin
+
+Srilm:
+    - install csh, tcl
+    - set in Makefile
+    SRILM = /home/ntkleynhans/Workspace/juicer/srilm
+

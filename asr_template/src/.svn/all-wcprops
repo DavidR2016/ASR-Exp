@@ -1,0 +1,287 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/21271/hlt/asr/asr_template/src
+END
+phone_recognition.sh
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/20946/hlt/asr/asr_template/src/phone_recognition.sh
+END
+htksortdict.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/18336/hlt/asr/asr_template/src/htksortdict.c
+END
+create_configs.sh
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/21054/hlt/asr/asr_template/src/create_configs.sh
+END
+word_recognition.sh
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/20946/hlt/asr/asr_template/src/word_recognition.sh
+END
+word_recognition_juicer.sh
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/20946/hlt/asr/asr_template/src/word_recognition_juicer.sh
+END
+make_proto_hmm_set.pl
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/17876/hlt/asr/asr_template/src/make_proto_hmm_set.pl
+END
+check_num_monophone_examples.pl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/20950/hlt/asr/asr_template/src/check_num_monophone_examples.pl
+END
+cmn.sh
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/18650/hlt/asr/asr_template/src/cmn.sh
+END
+add_disambiguation_symbols.pl
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/17969/hlt/asr/asr_template/src/add_disambiguation_symbols.pl
+END
+makesp.pl
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/17877/hlt/asr/asr_template/src/makesp.pl
+END
+semit.sh
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/20946/hlt/asr/asr_template/src/semit.sh
+END
+check_words_in_dict.pl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/17901/hlt/asr/asr_template/src/check_words_in_dict.pl
+END
+cvn.sh
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/18650/hlt/asr/asr_template/src/cvn.sh
+END
+remove_punctuation.pl
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/20699/hlt/asr/asr_template/src/remove_punctuation.pl
+END
+create_init_models.sh
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/20946/hlt/asr/asr_template/src/create_init_models.sh
+END
+check_for_things_that_break_htk.pl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/18254/hlt/asr/asr_template/src/check_for_things_that_break_htk.pl
+END
+check_valid_dict_pronunciations.pl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/20930/hlt/asr/asr_template/src/check_valid_dict_pronunciations.pl
+END
+split.pl
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/20699/hlt/asr/asr_template/src/split.pl
+END
+forced_alignment.sh
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/21020/hlt/asr/asr_template/src/forced_alignment.sh
+END
+srilm_ngram_lm.sh
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/17920/hlt/asr/asr_template/src/srilm_ngram_lm.sh
+END
+init.sh
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/17920/hlt/asr/asr_template/src/init.sh
+END
+prune_list_after_alignment.pl
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/17863/hlt/asr/asr_template/src/prune_list_after_alignment.pl
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/17908/hlt/asr/asr_template/src/Makefile
+END
+clg.sh
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/17969/hlt/asr/asr_template/src/clg.sh
+END
+create_merge_led.sh
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/18350/hlt/asr/asr_template/src/create_merge_led.sh
+END
+check_transcripts_have_content.pl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/17863/hlt/asr/asr_template/src/check_transcripts_have_content.pl
+END
+create_quests_file.pl
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/17866/hlt/asr/asr_template/src/create_quests_file.pl
+END
+check_exit_status.sh
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/18644/hlt/asr/asr_template/src/check_exit_status.sh
+END
+reduce_dict.pl
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/17920/hlt/asr/asr_template/src/reduce_dict.pl
+END
+create_mlf_from_text_files.pl
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/20970/hlt/asr/asr_template/src/create_mlf_from_text_files.pl
+END
+mkclscript.pl
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/17863/hlt/asr/asr_template/src/mkclscript.pl
+END
+inc_hmm_cnt.sh
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/21055/hlt/asr/asr_template/src/inc_hmm_cnt.sh
+END
+maketrihed.pl
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/17880/hlt/asr/asr_template/src/maketrihed.pl
+END
+loop_grammar.sh
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/17920/hlt/asr/asr_template/src/loop_grammar.sh
+END
+create_monophone_list.pl
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/17969/hlt/asr/asr_template/src/create_monophone_list.pl
+END
+decode.sh
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/20699/hlt/asr/asr_template/src/decode.sh
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/17923/hlt/asr/asr_template/src/README
+END
+lowercase.pl
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/17863/hlt/asr/asr_template/src/lowercase.pl
+END
+create_relabel_pairs.pl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/17969/hlt/asr/asr_template/src/create_relabel_pairs.pl
+END
+herest.sh
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/21271/hlt/asr/asr_template/src/herest.sh
+END
+compose_clg.sh
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/17968/hlt/asr/asr_template/src/compose_clg.sh
+END
+create_wordlist.pl
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/20966/hlt/asr/asr_template/src/create_wordlist.pl
+END
+tri_train.sh
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/20946/hlt/asr/asr_template/src/tri_train.sh
+END
+check_feature_obs.pl
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/17903/hlt/asr/asr_template/src/check_feature_obs.pl
+END
+tri_inc_mixes.sh
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/20946/hlt/asr/asr_template/src/tri_inc_mixes.sh
+END
+check_every_audio_has_text_and_vv.pl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/17863/hlt/asr/asr_template/src/check_every_audio_has_text_and_vv.pl
+END
+mono_train.sh
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/20975/hlt/asr/asr_template/src/mono_train.sh
+END

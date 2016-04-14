@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/21020/hlt/asr/asr_template/experiment_template
+END
+PREPROC.sh
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/18648/hlt/asr/asr_template/experiment_template/PREPROC.sh
+END
+TUTORIAL
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/18608/hlt/asr/asr_template/experiment_template/TUTORIAL
+END
+FEATURE_EXTRACTION.sh
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/18645/hlt/asr/asr_template/experiment_template/FEATURE_EXTRACTION.sh
+END
+Vars.sh
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/21020/hlt/asr/asr_template/experiment_template/Vars.sh
+END
+TRAIN_BACKGROUND_MODEL.sh
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/20945/hlt/asr/asr_template/experiment_template/TRAIN_BACKGROUND_MODEL.sh
+END
+CHECK.sh
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/20699/hlt/asr/asr_template/experiment_template/CHECK.sh
+END
+TRAIN.sh
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/20699/hlt/asr/asr_template/experiment_template/TRAIN.sh
+END
+TEST.sh
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/18649/hlt/asr/asr_template/experiment_template/TEST.sh
+END
+CMVN.sh
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/20699/hlt/asr/asr_template/experiment_template/CMVN.sh
+END
+JUICER.README
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/17926/hlt/asr/asr_template/experiment_template/JUICER.README
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/17923/hlt/asr/asr_template/experiment_template/README
+END

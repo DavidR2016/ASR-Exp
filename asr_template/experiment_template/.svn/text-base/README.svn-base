@@ -1,0 +1,125 @@
+Training an ASR system from scratch will require you to run at most four
+scripts. Each script can be run without arguments to see the available
+options (see WARNINGS & RESOURCES at bottom of file!)
+
+To evaluate a trained ASR system, use TEST.sh
+
+===============================================================================
+(1) PREPROC.sh
+===============================================================================
+
+  What does it do?
+    - This normalizes the transcriptions for ASR by eg changing everything
+      to lowercase and removing some punctuation.
+
+  What is required?
+    - set the following in Vars.sh
+      * DIR_SRC
+      * FILE_PUNCT (if you want to remove punctuation)
+    - A list that specifies the transcriptions and where the normalized
+      transcriptions should be written to.
+      Example (one line of list file):
+      /home/cvheerden/transcriptions/1.txt /home/cvheerden/new_transcriptions/1.txt
+    - If you want to remove punctuation, a list that looks as follows:
+      Example (two lines of punctuation file list):
+      ".";""
+      "[s]";" "
+      - the first line will completely remove full stops
+      - the second line will replace all instances of [s] with a space
+      - This list is defined in Vars.sh as FILE_PUNCT
+    - IMPORTANT:
+      * use full paths
+      * the destination directory MUST exist. PREPROC will not create it for you.
+
+  General remarks:
+    - It should only be necessary to run this once per corpus
+
+===============================================================================
+(2) FEATURE_EXTRACTION.sh
+===============================================================================
+
+  What does it do?
+    - This extracts features from audio files
+
+  What is required?
+    - Set the following in Vars.sh
+      * TARGET_KIND ( WAVE as SOURCE is the default)
+    - A list that specifies the audio files and the destinations for the
+      feature files
+      Example (one line of list file):
+      /home/cvheerden/audio/1.wav /home/cvheerden/feature_file/1.mfc
+    - IMPORTANT:
+      * use full paths
+      * the destination directory MUST exist
+
+  General remarks:
+    - It should only be necessary to run this once per corpus
+
+===============================================================================
+(3) CHECK.sh (optional)
+===============================================================================
+
+  What does it do?
+    - This script tries to figure out if your ASR process will run through
+      without breaking. It does this by checking for common pitfalls. Do
+      ./CHECK.sh for more details
+    - Make sure this script runs without printing errors before attempting to
+      train an ASR system (or continue at your own risk)
+
+  What is required?
+    - In Vars.sh, set ALL variables under "REQUIRED"
+
+===============================================================================
+(4) TRAIN.sh
+===============================================================================
+
+  What does it do?
+    - This trains your ASR system. The basic script will train a cross-word
+      triphone based system with semi-tied transforms, and optionally perform
+      phone recognition on a specified test set
+
+  What is required?
+    - In Vars.sh, set ALL variables under "REQUIRED"
+    - We recommend running CHECK.sh to determine if your setup is sufficient
+    - Four list files
+      (1) Audio train list (points to extracted feature files used for TRAINING)
+      (2) Audio test list (points to extracted feature files used for TESTING)
+      (3) Transcriptions train list (points to preprocessed transcription files used for TRAINING)
+      (4) Transcriptions test list (points to preprocessed transcription files used for TESTING)
+    - A pronunciation dictionary containing all words in training and testing
+
+===============================================================================
+WARNINGS
+===============================================================================
+* On some Ubuntu systems, "sh" points to dash and not bash. There are subtle differences
+  which WILL break the training process.
+  To be safe, run all scripts as "bash <script>" instead of "sh <script>"
+* HTK can't handle transcriptions which have ' or " at the beginning of a word. Using the
+  remove_punctuation script, you can specify " '";" \'", which will put a \ before every '.
+  (This should also be the case in your dictionary!)
+  If you have these words at the BEGINNING of a sentence, you'll have to change them manually
+  (we don't want to overcomplicate the removal of punctuation, so for now you can't indicate
+   the beginning of a sentence in the punctuation text file)
+
+===============================================================================
+RESOURCES
+===============================================================================
+* We're trying to get all our ASR resources (corpora + scripts + dicts) checked
+  into svn at http://echelon.dhcp/svn/hlt/asr/
+
+
+===============================================================================
+INSTALLTIONS
+===============================================================================
+* If htksortdict is not installed, run the following commands to install it:
+  $ cd DIR_SRC/
+  $ sudo make
+* If you want to do decoding using JUICER, see JUICER.README
+
+===============================================================================
+TODOS
+===============================================================================
+MD/NK/TM: Add MLLR
+MD/NK/TM: Add CMLLR
+MD/NK/TM: Add MAP
+
